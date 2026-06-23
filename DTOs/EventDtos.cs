@@ -1,0 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+namespace StudentEventManagementSystem.DTOs;
+public class EventResponseDto { public int Id { get; set; } public string Name { get; set; } = string.Empty; public string Description { get; set; } = string.Empty; public string Venue { get; set; } = string.Empty; public DateTime EventDate { get; set; } public DateTime CreatedAt { get; set; } public int RegistrationsCount { get; set; } public double AverageRating { get; set; } }
+public class CreateEventDto { [Required][MaxLength(200)] public string Name { get; set; } = string.Empty; [Required][MaxLength(500)] public string Description { get; set; } = string.Empty; [Required][MaxLength(200)] public string Venue { get; set; } = string.Empty; [Required] public DateTime EventDate { get; set; } }
+public class UpdateEventDto { [MaxLength(200)] public string? Name { get; set; } [MaxLength(500)] public string? Description { get; set; } [MaxLength(200)] public string? Venue { get; set; } public DateTime? EventDate { get; set; } }
