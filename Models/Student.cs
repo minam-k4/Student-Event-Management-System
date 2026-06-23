@@ -1,0 +1,3 @@
+using System.ComponentModel.DataAnnotations;
+namespace StudentEventManagementSystem.Models;
+public class Student { public int Id { get; set; } [Required][MaxLength(100)] public string Name { get; set; } = string.Empty; [Required][EmailAddress][MaxLength(200)] public string Email { get; set; } = string.Empty; [MaxLength(20)] public string RollNumber { get; set; } = string.Empty; public DateTime CreatedAt { get; set; } = DateTime.UtcNow; public ICollection<Registration> Registrations { get; set; } = new List<Registration>(); public ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>(); }
